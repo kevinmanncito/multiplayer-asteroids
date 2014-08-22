@@ -1,0 +1,9 @@
+<h1>{{title}}</h1>
+
+<h2>There are {{scores.length}} scores</h2>
+
+<ul>
+    <li ng-repeat="score in scores | orderBy:'-score' | limitTo:20" >
+      <h3>{{$index + 1}}: {{score.name}} - {{score.score}}<h3>
+    </li>
+</ul>

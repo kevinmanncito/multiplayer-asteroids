@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- CSS (load bootstrap) -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script src="libs/socket/socket.js"></script>
+</head>
+
+<!-- apply our angular app to our site -->
+<body ng-app="asteroids">
+
+<!-- MAIN CONTENT -->
+<header ng-include="'tmpl/partial-header.html'"></header>
+<div class="container">
+    <div ui-view></div>
+</div>
+
+
+
+
+    <!-- JS Core(load angular, ui-router, and our custom js file) -->
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-ui/build/angular-ui.min.js"></script>
+    <script src="libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/bootstrap/js/modal.js"></script>
+    <script src="js/core.js"></script>
+    
+    <script src="js/game/Renderer.js"></script>
+    <script src="js/game/Particles.js"></script>
+    <script src="js/game/Ufos.js"></script>
+    <script src="js/game/Calc.js"></script>
+    <script src="js/game/Updater.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/homeCtrl.js"></script>
+    <script src="js/controllers/scoreCtrl.js"></script>
+    <script src="js/controllers/aboutCtrl.js"></script>
+    <script src="js/controllers/gameCtrl.js"></script>
+
+    <!-- Services -->
+    <script src="js/services/scoreService.js"></script>
+
+</body>
+</html>

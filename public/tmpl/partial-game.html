@@ -1,0 +1,47 @@
+<h1 ng-hide="hideTitle">{{title}}</h1>
+<div class="row">
+  <div id="form" class="form col-sm-6" ng-hide="hideForms">
+    <h3>Multiplayer</h3>
+    <input class="form-control" ng-model="game.player.name" placeholder="Name"> 
+    <input class="form-control" ng-model="game.name" placeholder="Game to Join or Create">
+    <button class="btn btn-default" ng-click="init()">Start</button>
+  </div>
+  <div id="form" class="form col-sm-6" ng-hide="hideForms">
+    <h3>Single player</h3>
+    <input class="form-control" ng-model="game.singlePlayer.name" placeholder="Your name">
+    <button class="btn btn-default" ng-click="initSingle()">Start</button>
+  </div>
+</div>
+
+<div id="score" ng-model="game.player.score">Score: {{game.player.score}}</div>
+<div id="lives" ng-model="game.player.lives">Lives: {{game.player.lives}}</div>
+
+<div id="message" ng-hide="hideMessage">{{message}}</div>
+
+<!-- modal --> 
+<div class="modal fade" role="dialog" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Controls: <small>press new keys in text boxes below</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form" action="gameCtrl.js">
+          <label for="">Accelerate:<input type="text" class="form-control" ng-keyup="saveAccelerate($event)" ng-model="accelerate"></label>
+          <label for="">Rotate Left:<input type="text" class="form-control" ng-keyup="saveRotateLeft($event)" ng-model="rotateLeft"></label>
+          <label for="">Rotate Right:<input type="text" class="form-control" ng-keyup="saveRotateRight($event)" ng-model="rotateRight"></label>
+          <label for="">Hyperspace Jump:<input type="text" class="form-control" ng-keyup="saveHyperspace($event)" ng-model="jump"></label>
+          <label for="">Fire Lasers:<input type="text" class="form-control" ng-keyup="saveFire($event)" ng-model="fire"></label>
+        </form>        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of modal --> 
+
+<canvas id="canvas" height="600" width="960">Canvas is not supported</canvas>
+<canvas id="background" height="600" width="960">Canvas is not supported</canvas>
